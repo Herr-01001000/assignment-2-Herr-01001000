@@ -2,12 +2,11 @@
 
 # Define Input values.
 factors = []
-#map(int, input('Input factors separated by ", " :').split(', '))
 
 # Define parameters.
 weights = []
-#map(int, input('Input weights separated by ", " :').split(', '))
 a: int
+rho: int
 
 # Define Production functions.
 def general_cobb_douglas(factors, weights, a):
