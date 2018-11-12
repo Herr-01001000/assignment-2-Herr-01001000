@@ -41,17 +41,10 @@ def robust_general_ces(factors, weights, a, rho):
     the output of the Cobb-Douglas function.
 	"""
     if rho == 0:
-        output = a
-        for i in range(len(factors)):
-            output = output * factors[i] ** weights[i]
-            
+        output = general_cobb_douglas(factors, weights, a)
         return output
     else:
-        output = 0
-        for i in range(len(factors)):
-            output = output + weights[i]*factors[i]**(-rho)
-            
-        output = a * output**(-1/rho)
+        output = general_ces(factors, weights, a, rho)
         return output
 
 # Evaluate General Cobb-Douglas production functions.
