@@ -1,0 +1,90 @@
+\documentclass[11pt,a4paper,leqno]{article}
+\usepackage{a4wide}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{float, afterpage, rotating, graphicx}
+\usepackage{longtable, booktabs, tabularx}
+\usepackage{verbatim}
+\usepackage{eurosym, calc, chngcntr}
+\usepackage{amsmath, amssymb, amsfonts, amsthm, bm, delarray, mathtools} 
+\usepackage{caption}
+\usepackage{tkz-graph}
+\usetikzlibrary{arrows,positioning,snakes,shapes,shapes.multipart,patterns,mindmap,shadows}
+
+ \usepackage[backend=biber, natbib=true, bibencoding=inputenc, bibstyle=authoryear-ibid, citestyle=authoryear-comp, maxnames=10]{biblatex}
+ %\bibliography{bib/hmg}
+
+\usepackage[unicode=true]{hyperref}
+\hypersetup{colorlinks=true, linkcolor=black, anchorcolor=black, citecolor=black, filecolor=black, menucolor=black, runcolor=black, urlcolor=black}
+\setlength{\parskip}{.5ex}
+\setlength{\parindent}{0ex}
+
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}
+\renewcommand{\theenumi}{\roman{enumi}}
+
+% Set this counter to "first exercise of the week minus one".
+\setcounter{exercise}{0}
+
+\begin{document}
+
+\begin{center}
+    \begin{large}
+        \textbf{
+        Effective programming practices for economists\\
+        Universität Bonn, Winter 2018/19 \\[2ex]
+        Exercise solution\\[2ex]
+%        Group XXXX\\[2ex]
+        Wenxin Hu
+        }
+    \end{large}
+\end{center}
+
+
+\begin{exercise}
+    Task 4: Write the Cobb-Douglas and CES production functions that accept arbitrary numbers of inputs.
+    \begin{enumerate}
+        \item The Cobb-Douglas production function that accept arbitrary numbers of inputs should be like this:
+        $$y = a \cdot \prod_{j=1}^J x_j^{\gamma_j}$$
+        \item The Constant Elasticity of Subsititution (CES) production function is given by:
+        $$y = a \cdot \bigg(\sum_{j=1}^J \gamma_j x_j^{-\rho} \bigg)^{-\frac{1}{\rho}}$$
+        \item The robust general CES production function is like this:
+        \[
+            y = \begin{dcases}
+            a \cdot \bigg(\sum_{j=1}^J \gamma_j x_j^{-\rho} \bigg)^{-\frac{1}{\rho}} & , \rho \neq 0 \\
+            a \cdot \prod_{j=1}^J x_j^{\gamma_j} & , \rho = 0 \\
+            \end{dcases}
+        \]
+        \item Prove when $\rho$ approaches zero, the output of the CES function is close to the output of the Cobb-Douglas function:
+
+        First, we put logarithm on both sides of the Cobb-Douglas function.
+        $$ \ln y = \ln a + \sum_{j=1}^J \gamma_j \ln x_j$$
+
+        Similarly, we put logarithm on both sides of the CES function and take the limit when $\rho$ approaches 0.
+        $$\ln y = \ln a - \frac{\ln (\sum_{j=1}^J\gamma_jx_j^{-\rho})}{\rho}$$
+
+        \begin{align*}
+            \lim_{\rho \rightarrow 0} \ln y &= \ln a - \lim_{\rho \rightarrow 0} \frac{\ln(\sum_{j=1}^J\gamma_jx_j^{-\rho})}{\rho}\\ 
+            &= \ln a - \lim_{\rho \rightarrow 0} \frac{\partial \ln(\sum_{j=1}^J\gamma_jx_j^{-\rho})}{\partial \rho} \\
+            &= \ln a + \lim_{\rho \rightarrow 0} \frac{\sum_{j=1}^J\gamma_jx_j^{-\rho} \ln x_j}{\sum_{j=1}^J\gamma_jx_j^{-\rho}}\\
+            &= \ln a + \sum_{j=1}^J \gamma_j \ln x_j
+        \end{align*}
+
+        Then we can see that the limit output of the CES function is the limit output of the Cobb-Douglas function when the limit of $\rho \rightarrow 0$.
+
+    \end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}
+    The advantages of splitting up the code.  
+    \begin{enumerate}
+        \item 
+        \item      
+    \end{enumerate}
+\end{exercise}
+
+
+% \printbibliography 
+
+\end{document}
