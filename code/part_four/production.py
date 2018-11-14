@@ -5,8 +5,6 @@ factors = []
 
 # Define parameters.
 weights = []
-a: int
-rho: int
 
 # Define Production functions.
 def general_cobb_douglas(factors, weights, a):

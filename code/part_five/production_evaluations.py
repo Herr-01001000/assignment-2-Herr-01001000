@@ -7,8 +7,6 @@ factors = []
 
 # Define parameters
 weights = []
-a: int
-rho: int
 
 # Evaluate production functions.
 # Evaluate robust CES production functions when *rho* is zero.
