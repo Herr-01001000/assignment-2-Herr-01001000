@@ -66,6 +66,23 @@ print('Expected result: 4.57')
 print('Calculated result: ', result)
 print('*****************************')
 
+# Evaluate robust CES production functions when *rho* approaches zero.
+result = robust_general_ces(
+    factors = [1, 2, 3], 
+    weights = [0.1, 0.4, 0.5],
+    a = 2,
+    rho = 0.0000000001
+)
+
+print('robust_general_ces')
+print('factors = [1, 2, 3]')
+print('weights = [0.1, 0.4, 0.5]')
+print('a = 2')
+print('rho = 0.0000000001')
+print('Expected result: 4.57')
+print('Calculated result: ', result)
+print('*****************************')
+
 # Evaluate robust CES production functions when *rho* is not zero.
 result = robust_general_ces(
     factors = [1, 2, 3], 
