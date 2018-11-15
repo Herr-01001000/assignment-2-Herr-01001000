@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Nov 12 01:28:05 2018
-
-@author: Wenxin Hu
+"""Print statements to see which variables are defined in the namespaces of
+your modules or functions.
 """
 
 # Print all local variables, excluding some built-in variables.
