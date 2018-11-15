@@ -77,10 +77,20 @@
 
 
 \begin{exercise}
-    The advantages of splitting up the code.  
+    The advantages of splitting up the code:\\
+
+    Splitting up the code into small projects makes each small project is relatively independent, has a single function, a clear structure, and a simple interface. When the project you work on is huge, you will find use some basic module codes quiet often and there will be a lot of function callings, nestings and loops. If all these codes are implemented in one big file, the things will be extremely complicated, especially when you want to debug the code. \\
+
+    According to what we learned in the lecture, Python objects (variables, functions) follows the LEGB rule, which means Python will resolve names from Local scope to Enclosing scope to Gobal scope to Built-in scope. Debugging the code requires us to traceback the specific variables or functions. However, too many namespace levels in one big file will create chaos. The difficulty of finding the bug is significantly increased because the names of the objects can have conflicts or mistakes easily. If the local variable is not defined in its space, Python will look for some other variable shares the same name in Global scope. If this is not what you want for this specific function, the wrong number will be implemented in the function and it is not easy to find the problem in a huge project. Splitting up the code will fix this problem. In a small project which is dedicated for one small function, normally there will be less levels of namespaces. If anything goes wrong, we can easily traceback to the small function because there are much less namespace levels for us to check. \\
+
+    What's more, it will be really hard to remember the names or call the functions because the variable and function names will end up pretty long and nasty in order to avoid conflicts. If we split the code into small functions, we will call the function from global scope easily by using "from...import...". We can use them in anywhere we need. It will also be very convenient for others in the team to use the functions.\\
+
+    In conclusion, these are some advantages of splitting up the code from my prespective:
     \begin{enumerate}
-        \item 
-        \item      
+        \item Control the comlexity of programming;
+        \item Improve the reusability of the code;
+        \item Easy maintenance and functional expansion;
+        \item Conductive to team development.
     \end{enumerate}
 \end{exercise}
 
